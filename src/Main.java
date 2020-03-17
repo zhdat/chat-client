@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -7,8 +8,17 @@ public class Main {
 		System.out.println("Entrez votre nom d'utilisateur: ");
 		String userName = scan.nextLine();
 		
-		System.out.println("Entrez votre mot de passe: ");
-		String password = scan.nextLine();
+		char password[] = null;
+		try {
+			password = PasswordField.getPassword(System.in, "Entrez votre mot de passe: ");
+		} catch(IOException ioe) {
+			ioe.printStackTrace();
+		}
+		if(password == null) {
+			System.out.println("Aucun mot de passe n'a été entré.");
+		} else {
+			System.out.println("Le mot de passe entré est: " + String.valueOf(password));
+		}
 		
 	}
 }
