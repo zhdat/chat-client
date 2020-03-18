@@ -1,3 +1,4 @@
+package com.chatclient.console;
 import java.io.*;
 import java.util.*;
 
@@ -9,7 +10,6 @@ public class PasswordField {
 		
 		char[] lineBuffer;
 		char[] buf;
-		int i;
 		
 		buf = lineBuffer = new char[128];
 		

@@ -1,4 +1,4 @@
-import java.io.*;
+package com.chatclient.console;
 
 public class MaskingThread extends Thread {
 	private volatile boolean stop;
@@ -18,7 +18,7 @@ public class MaskingThread extends Thread {
 			while(stop) {
 				System.out.print("\010" + echoChar);
 				try {
-					Thread.currentThread().sleep(1);
+					Thread.sleep(1);
 				} catch (InterruptedException ie) {
 					Thread.currentThread().interrupt();
 					return;
